@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "plugins": ["node", "prettier"],
+  "rules": {
+    "linebreak-style": "off",
+    "quotes": ["warn", "double"],
+    "comma-dangle": "off",
+    "operator-linebreak": "off",
+    "max-len": "off",
+    "spaced-comment": "off",
+    "no-unused-vars": "warn"
+  }
+}
