@@ -12,20 +12,11 @@ class App extends Component {
       impresionsDs: [],
       visitsDs: []
     };
-    //this.refCanvas = React.createRef();
   }
 
   componentDidMount() {
     this.getDs();
   }
-
-  // shouldComponentUpdate() {
-  //   this.getRevenueDs();
-  // }
-  // UNSAFE_componentWillMount() {
-  //   this.getRevenueDs();
-  // }
-
   getDs() {
     Promise.all([fetch("api/revenue"), fetch("api/impresions"), fetch("api/visits")])
       .then(([res1, res2, res3]) => Promise.all([res1.json(), res2.json(), res3.json()]))

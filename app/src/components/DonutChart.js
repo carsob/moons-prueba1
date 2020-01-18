@@ -3,10 +3,12 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from "react";
 import * as d3 from "d3";
+import PropTypes from "prop-types";
 
 class DonutChart extends Component {
   componentDidMount() {}
-  UNSAFE_componentWillReceiveProps({ ds, color }) {
+  componentDidUpdate() {
+    const { ds, color } = this.props;
     this.drawDonutRevenue(ds, color);
   }
 
@@ -394,4 +396,13 @@ class DonutChart extends Component {
     );
   }
 }
+// Especifica los valores por defecto de props:
+DonutChart.defaultProps = {
+  ds: [],
+  color: ""
+};
+DonutChart.propTypes = {
+  ds: PropTypes.arrayOf(PropTypes.object),
+  color: PropTypes.string
+};
 export default DonutChart;
